@@ -1,0 +1,46 @@
+.card{
+    border: none;
+    width: 500px;
+    padding:40px;
+    position: absolute;
+    border-radius:7%;
+    bottom:10%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    background: rgba(15, 15, 15, 0.7);
+    backdrop-filter:blur(60px);
+}
+
+.card  h1{
+    color: #ffff;
+    font-weight: 700;
+    font-size:25px;
+}
+
+h6{
+    font-size: 18px;
+    font-weight: 500;
+    color: white;
+}
+
+label{
+    color: #ffff;
+}
+
+#container{
+    text-align: center;
+}
+body{ 
+    height:100%;
+    background-position:center;
+    background-repeat:no-repeat;
+}
+
+.background-iamge{
+    background:fixed;
+    height: 901px;
+    width: 1920px;
+    filter: blur(2px);
+  -webkit-filter: blur(2px);
+}
+   

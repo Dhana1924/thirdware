@@ -1,0 +1,33 @@
+<body>
+    <img class="background-iamge" >
+    <div class="container">
+      <div class="row">
+        <div style="margin-top: -100%;" class="col-md-6">
+          <div style="margin-left: 50%;" class="card">
+            <div class="text-center">
+              <h1>Login</h1>
+              <h6>Please enter email & password !!</h6>
+            </div>
+            <form [formGroup]="loginForm" (ngSubmit)="login()" >
+              <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Email address</label>
+                <input formControlName="email" type="email" name="email" [(ngModel)]="email" class="form-control" id="exampleInputEmail1"
+                  aria-describedby="emailHelp">
+  
+              </div>
+              <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Password</label>
+                <input formControlName="password" type="password" name="password" [(ngModel)]="password" class="form-control" id="exampleInputPassword1">
+              </div>
+
+              <div id="container">
+                <button type="submit" class="btn btn-primary">Login</button><br><br>
+                <a style="color:azure; margin-top: 10px; cursor: pointer;" routerLink="/registration"> New user ? click to signup</a><br><br>
+                <a style="color:azure; margin-top: 10px; cursor: pointer;" routerLink="/forget"> Forget Password  </a>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>

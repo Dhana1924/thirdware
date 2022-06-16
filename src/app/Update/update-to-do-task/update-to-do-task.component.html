@@ -1,0 +1,39 @@
+<div class="container mt-8">
+    <div class="row m-5 no-gutters shadow-lg">
+        <div class="col-md-6 d-none d-md-block">
+            <img src="assets\doctor\doctor.jpg" class="img-fluid mt-3" style="min-height:90%; width: 900px;" />
+        </div>
+        <div class="col-md-6 bg-white p-5">
+            <h3 class="pb-3" style="text-align: center;">Update Task Details</h3>
+            <div class="form-style">
+                <form class="form-control ">
+                    <div class="form-group mt-3 ">
+                        <label for="todotaskname" class="form-label"><b>Task name :</b></label>
+                        <input type="text" class="form-control" placeholder="Enter doctorname" name="todotaskname" #todotaskname="ngModel" [(ngModel)]="todotask.todotaskname" required>
+                    </div>
+
+                    <div class="form-group mt-3 ">
+                        <label for="todotaskassignee" class="form-label"><b>Task Assignee :</b></label>
+                        <input type="text" class="form-control" placeholder="Enter qualification" name="todotaskassignee" #todotaskassignee="ngModel" [(ngModel)]="todotask.todotaskassignee" required>
+                    </div>
+
+                    <div class="form-group mt-3 ">
+                        <label for="speciality" class="form-label"><b>Task Start date :</b></label>
+                        <input type="text" class="form-control" placeholder="Enter speciality" name="todotaskstartdate" #todotaskstartdate="ngModel" [(ngModel)]="todotask.todotaskstartdate" required>
+                    </div>
+
+                    <div class="form-group mt-3 ">
+                        <label for="todotaskpriority" class="form-label"><b>Task Priority :</b></label>
+                        <input type="text" class="form-control" placeholder="Enter timing" name="todotaskpriority" #todotaskpriority="ngModel" [(ngModel)]="todotask.todotaskpriority" required>
+                    </div>
+
+
+                    <div class="d-flex justify-content-center">
+                        <button type="submit" class="btn btn-dark mt-3" data-bs-dismiss="modal" aria-label="Close" (click)="Submit()">Update</button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

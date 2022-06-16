@@ -1,0 +1,60 @@
+<body>
+  <div class="sidenav">
+    <ul>
+      <a class="nav-link align-middle px-0" style="font-size: 135%;cursor: pointer;font-style: italic;">
+        <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline text-light">Account</span>
+      </a>
+      <a href="#submenu1" data-bs-toggle="collapse" class="nav-link px-0 align-middle"
+        style="font-size: 135%;font-style: italic;">
+        <i class="fs-4 bi-speedometer2"></i> <span class="ms-1 d-none d-sm-inline text-light">Workspace</span> </a>
+      <ul class="collapse show nav flex-column ms-1" id="submenu1" data-bs-parent="#menu">
+        <li class="w-100">
+          <a class="nav-link px-0" style="font-size: 135%;cursor: pointer;font-style: italic;"> <span
+              class="d-none d-sm-inline text-light">Team Home</span> </a>
+        </li>
+        <li>
+          <a class="nav-link px-0" style="font-size: 135%;cursor: pointer;font-style: italic;"routerLink="docs"> <span
+              class="d-none d-sm-inline text-light">Docs Upload </span></a>
+        </li>
+        <li>
+          <a class="nav-link px-0" style="font-size: 135%;cursor: pointer;font-style: italic;"> <span
+              class="d-none d-sm-inline text-light"routerLink="/TaskList">Task List</span></a>
+        </li>
+        <li>
+          <a class="nav-link px-0" style="font-size: 135%;cursor: pointer;font-style: italic;"> <span
+              class="d-none d-sm-inline text-light">MOM</span></a>
+        </li>
+        <li>
+          <a class="nav-link px-0" style="font-size: 135%;cursor: pointer;font-style: italic;"> <span
+              class="d-none d-sm-inline text-light"routerLink="/Blockers">Blockers</span></a>
+        </li>
+      </ul>
+    </ul>
+    <a class="nav-link align-middle px-0"
+      style="margin-left: 18%;margin-top: 0%;font-size: 150%;cursor: pointer;font-style: italic;">
+      <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline text-light"routerLink="">Logout</span>
+    </a>
+  </div>
+  <div class="main">
+    <body style=" background-color: blanchedalmond;
+    margin-top: 3%; height: 30vh; width: 200%;margin-left: -2%;">
+    </body>
+  </div>
+  <div style="margin-left: 23%;">
+    <body style="margin-top: 2%;margin-bottom: 3%;">
+      <i class=" material-icons w3-jumbo fa fa-home">
+        <h1 style="margin-top:5%">Team Home</h1>
+      </i>
+    </body>
+  </div>
+  <div style="margin-top: 5%; margin-left:23%">
+    <h3>Team</h3>
+    <ul style="font-size: x-large; font-style: italic; cursor: pointer; "><i class="fa fa-star" aria-hidden="true"
+        style="margin-right: 2%;"></i><a routerLink="whats" style="color: black;">What's New</a></ul>
+    <ul style="font-size: x-large;font-style: italic; cursor: pointer;"><i class="fa fa-flag" aria-hidden="true"
+        style="margin-right: 2%;"></i><a routerLink="teammission" style="color: black;">Team Mission</a></ul>
+    <ul style="font-size: x-large; font-style: italic; cursor: pointer;"><i class="fa fa-car" aria-hidden="true"
+        style="margin-right: 2%;"></i><a routerLink="teamobj" style="color: black;">Team Objectives</a></ul>
+  </div>
+</body>
+<router-outlet></router-outlet>

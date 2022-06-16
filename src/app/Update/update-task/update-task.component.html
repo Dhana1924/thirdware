@@ -1,0 +1,40 @@
+<div class="container mt-8">
+
+    <div class="md-6 bg-white p-5">
+        <h3 class="pb-3" style="text-align: center;">Update Task Details</h3>
+        <div class="form-style">
+            <form class="form-control ">
+                <div class="form-group mt-3 ">
+                    <label for="taskname" class="form-label"><b>Task name :</b></label>
+                    <input type="text" class="form-control" placeholder="Enter doctorname" name="taskname" #taskname="ngModel" [(ngModel)]="task.taskname" required>
+                </div>
+
+                <div class="form-group mt-3 ">
+                    <label for="taskassignee" class="form-label"><b>Task Assignee :</b></label>
+                    <input type="text" class="form-control" placeholder="Enter qualification" name="taskassignee" #taskassignee="ngModel" [(ngModel)]="task.taskassignee" required>
+                </div>
+
+                <div class="form-group mt-3 ">
+                    <label for="speciality" class="form-label"><b>Task Start date :</b></label>
+                    <input type="text" class="form-control" placeholder="Enter speciality" name="taskstartdate" #taskstartdate="ngModel" [(ngModel)]="task.taskstartdate" required>
+                </div>
+
+                <div class="form-group mt-3 ">
+                    <label for="speciality" class="form-label"><b>Task Start date :</b></label>
+                    <input type="text" class="form-control" placeholder="Enter speciality" name="taskenddate" #taskenddate="ngModel" [(ngModel)]="task.taskenddate" required>
+                </div>
+
+                <div class="form-group mt-3 ">
+                    <label for="taskstatus" class="form-label"><b>Task Status :</b></label>
+                    <input type="text" class="form-control" placeholder="Enter timing" name="taskstatus" #taskstatus="ngModel" [(ngModel)]="task.taskstatus" required>
+                </div>
+
+
+                <div class="d-flex justify-content-center">
+                    <button type="submit" class="btn btn-dark mt-3" data-bs-dismiss="modal" aria-label="Close" (click)="Submit()">Update</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
