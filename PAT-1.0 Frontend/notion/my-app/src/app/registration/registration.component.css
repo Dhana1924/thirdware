@@ -1,0 +1,74 @@
+.container{    
+    width: 25%;
+    position: center ;
+    padding-top: 25px;
+    left: 4%;    
+}
+
+.btn {
+     margin-left: 90px;
+}
+
+.eyeicon{
+    left: 58%;
+    bottom:34%;
+    cursor: pointer;
+    position:absolute;
+    display:flexbox;
+}
+
+.fa-eye { 
+    font-size: 1.4em;
+    font-weight: 500;
+    position: absolute;
+}
+
+.fa-eye-slash{
+    font-size: 1.4em;
+    font-weight: 500;
+    position: absolute;
+}
+
+.g-signin2{
+    padding: 10px 550px;
+    text-align: center;
+    font-weight: bold;
+    height: 100%;
+}
+
+hr{
+    width: 22%;
+    margin-left: 500px;
+}
+
+
+.contextmenu{
+    position: absolute;
+    box-shadow: 0 1px 2px 0 rgba(35, 135, 211, 0.302),0 1px 3px 0 rgba(60, 64, 67,0.149);
+}
+
+.dropdown-content{
+    position: absolute;
+    background-color: rgba(197, 195, 195, 0.548);
+    height: 230px;
+    width: 400px;
+    box-shadow:0 8px 16px 0px rgba(0, 0, 0,0.2);
+    z-index: 1;
+    border-radius: 20px;
+    padding-left: 89px;
+    padding-top: 35px;
+    margin: 0 25px;
+    box-shadow: 0 1px 2px 0 rgba(60, 64, 67,0.302),0 1px 3px 0 rgba(60, 64, 67,0.149) ;
+}
+
+.font-weight-bold{
+ font-size:larger;
+ font-weight: 600;
+}
+
+.col{
+    font-size: 17px;
+    font-weight: 750;
+    
+}
+

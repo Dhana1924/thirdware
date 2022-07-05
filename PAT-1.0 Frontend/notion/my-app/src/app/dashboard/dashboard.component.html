@@ -1,0 +1,62 @@
+<body>
+<body style=" background-image: url('/assets/bg.jpg');
+height: 130vh;">
+  <div class="sidenav">
+    <ul>
+      <a class="nav-link align-middle px-0" style="font-size: 135%;cursor: pointer;font-style: italic;">
+        <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline text-light">Account</span>
+      </a>
+      <a href="#submenu1" data-bs-toggle="collapse" class="nav-link px-0 align-middle"
+        style="font-size: 135%;font-style: italic;">
+        <i class="fs-4 bi-speedometer2"></i> <span class="ms-1 d-none d-sm-inline text-light">Workspace</span> </a>
+      <ul class="collapse show nav flex-column ms-1" id="submenu1" data-bs-parent="#menu">
+        <li class="w-100">
+          <a class="nav-link px-0" style="font-size: 135%;cursor: pointer;font-style: italic;"routerLink="teamhome"> <span
+              class="d-none d-sm-inline text-light ">Team Home</span> </a>
+        </li>
+        <li>
+          <a class="nav-link px-0" style="font-size: 135%;cursor: pointer;font-style: italic;"routerLink="docs"> <span
+              class="d-none d-sm-inline text-light">Docs Upload </span></a>
+        </li>
+        <li>
+          <a class="nav-link px-0" style="font-size: 135%;cursor: pointer;font-style: italic;"> <span
+              class="d-none d-sm-inline text-light"routerLink="/TaskList">Task List</span></a>
+        </li>
+        <li>
+          <a class="nav-link px-0" style="font-size: 135%;cursor: pointer;font-style: italic;"> <span
+              class="d-none d-sm-inline text-light">MOM</span></a>
+        </li>
+        <li>
+          <a class="nav-link px-0" style="font-size: 135%;cursor: pointer;font-style: italic;"> <span
+              class="d-none d-sm-inline text-light"routerLink="/Blockers">Blockers</span></a>
+        </li>
+      </ul>
+    </ul>
+    <a class="nav-link align-middle px-0"
+      style="margin-left: 18%;margin-top: 0%;font-size: 150%;cursor: pointer;font-style: italic;">
+      <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline text-light"routerLink="">Logout</span>
+    </a>
+  </div>
+  <div style="margin-left: 23%;">
+    <body style="margin-bottom: 3%;" class="bg-transparent">
+      <i style="font-size: 300%;" class="fa fa-tasks" aria-hidden="true">
+        <h1 style="margin-top:5%" >Task</h1>
+      </i>
+    </body>
+  </div>
+  <div style="margin-top: 5%; margin-left:23%">
+    <h3>Daily Task Update</h3>
+    <div class="container">
+      <div class="row">
+        <div style="color: rgb(156, 156, 88);" class="col-xs-12 board"><h3>Today Task</h3><marquee>
+          <ul>UI design for DashBoard</ul>
+          <ul>Implementing spring boot for DashBoard</ul>
+          <ul>UI desgin for Docs Upload </ul>
+        </marquee></div>   
+      </div>
+    </div>
+    
+  </div>
+</body>
+</body>
+<router-outlet></router-outlet>

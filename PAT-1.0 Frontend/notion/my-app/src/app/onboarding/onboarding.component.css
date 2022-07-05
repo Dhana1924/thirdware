@@ -1,0 +1,23 @@
+h1{
+    font-size: 35px;
+    padding-left: 45%;
+    padding-top: 5%;
+}
+
+h3{
+    padding-left: 39%;
+    font-size: 20px;
+    font-weight: 400;
+    font-style:italic;
+}
+
+.container{
+    width: 25%;
+    position: center ;
+    padding-top: 25px;
+    left: 4%;  
+}
+
+.btn {
+    margin-left: 180px;
+}

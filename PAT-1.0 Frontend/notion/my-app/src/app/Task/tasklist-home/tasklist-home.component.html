@@ -1,0 +1,39 @@
+<div class="container mt-3 align-content-center ">
+    <h2><i class="fa fa-check"></i> TASK LIST</h2>
+    <p class="text-secondary mt-3" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+        <i class="fa fa-info-circle"></i> Show Description
+    </p>
+
+    <div class="collapse border-white" id="collapseExample">
+        <div class="cards card-body">
+            Use this template to track your personal tasks.<br> Click + New to create a new task directly on this board.<br> Click on edit to edit exiting task.<br>
+
+        </div>
+    </div>
+
+    <div class="container-fluid pt-3 pb-3 text-white">
+        <div class="row row-cols-1 row-cols-sm-6 g-4">
+            <div class="col" routerLink="Inprogress">
+                <div class="card text-white">
+                    <div class="card-body text-center">
+                        <h5 class="card-title text-black">In Progress</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col" routerLink="ToDo" style="margin-left:30px">
+                <div class="card text-white">
+                    <div class="card-body text-center">
+                        <h5 class="card-title text-black">To-Do</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- <nav class="breadcrumb mt-4" style="--bs-breadcrumb-divider: '';cursor: pointer;" aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item active" routerLink="Inprogress"><i class="fa fa-check-circle"></i><b> Task In Progress</b></li>
+            <li class="breadcrumb-item active ms-4" aria-current="page" routerLink="ToDo"><i class="fa fa-thumb-tack"></i><b> Tasks ToDo</b></li>
+        </ol>
+    </nav> -->
+<router-outlet></router-outlet>

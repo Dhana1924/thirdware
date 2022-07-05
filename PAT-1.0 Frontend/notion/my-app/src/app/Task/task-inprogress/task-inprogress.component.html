@@ -1,0 +1,138 @@
+<body style=" background-image: url('/assets/bg.jpg');
+height: 100vh;">
+<div class="container-fluid mt-4">
+
+    <div class="container-fluid pt-3 text-white">
+        <nav class="navbar navbar-expand-lg navbar-light bg-white">
+            <div class="container-fluid">
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item ms-5">
+                            <h5 class="nav-link active" aria-current="page" href="#"><b>In-Progress Task List</b></h5>
+                        </li>
+                    </ul>
+                    <form class="d-flex me-5">
+                        <div class="dropdown ms-2">
+                            <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+                              <i class="fa fa-filter"> Filter</i>
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
+                                <li><a class="dropdown-item active" href="#">All Task</a></li>
+                                <li><a class="dropdown-item" href="#">On Going</a></li>
+                                <li><a class="dropdown-item" href="#">Upcoming</a></li>
+                                <li><a class="dropdown-item" href="#">Completed</a></li>
+                            </ul>
+                        </div>
+                        <div class="dropdown ms-2">
+                            <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+                              <i class="fa fa-sort"> Sort</i>
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
+                                <li><a class="dropdown-item active" href="#">None</a></li>
+                            </ul>
+                        </div>
+                        <button class="btn btn-info ms-3" data-bs-toggle="modal" data-bs-target="#exampleModal">New +</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </div>
+</div>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <h3 style="text-align: center; font-weight: bolder;font-style: italic;">Enter New Task</h3>
+                <!--Form-->
+                <form class="mt-2 row g-4 border-2 text-black" [formGroup]="formValue">
+                    <div class="col-md-12 ">
+                        <label for="taskname" class="form-label"><b>Task Name:</b></label>
+                        <input type="text " formControlName="taskname" class="form-control border-dark" placeholder="+ New" aria-label="task name">
+                    </div>
+
+                    <div class="col-md-12 ">
+                        <label for="taskassignee" class="form-label"><b>Task Assignee:</b></label>
+                        <input type="text" formControlName="taskassignee" class="form-control border-dark" placeholder="+ New" aria-label="task assignee">
+                    </div>
+
+                    <div class="col-md-12 ">
+                        <label for="taskstartdate" class="form-label"><b>Task Start Date:</b></label>
+                        <input type="date" formControlName="taskstartdate" class="form-control border-dark" placeholder="task start date " aria-label=" task start date">
+                    </div>
+
+                    <div class="col-md-12 ">
+                        <label for="taskenddate" class="form-label"><b>Task End Date:</b></label>
+                        <input type="date" formControlName="taskenddate" class="form-control border-dark" placeholder="task start date " aria-label=" task start date">
+                    </div>
+
+                    <div class="col-md-12 ">
+                        <label for="taskstatus" class="form-label"><b>Task Status:</b></label>
+                        <input type="text" formControlName="taskstatus" class="form-control border-dark" placeholder="+ New" aria-label=" task status">
+                    </div>
+
+                    <button class="btn btn-light mt-3 mb-3 w-25 border-dark border-4" style="margin-left:180px;" (click)="postTask()">Add</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <!--TASK TABLE -->
+    <table class="table  table-hover table-responsive-xxl  ">
+        <thead>
+            <tr>
+                <th>Sr.No</th>
+                <th>Task Name</th>
+                <th>Task Assignee</th>
+                <th>Task Start Date</th>
+                <th>Task End Date</th>
+                <th>Task Status</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            <tr *ngFor="let item of list; let i=index ">
+                <td>{{i+1}}</td>
+                <td>{{item.taskname}}</td>
+                <td>{{item.taskassignee}}</td>
+                <td>{{item.taskstartdate}}</td>
+                <td>{{item.taskenddate}}</td>
+                <td>{{item.taskstatus}}</td>
+                <td>
+                    <div class="btn-group" role="group">
+                        <button class="btn btn-danger" (click)="deleteTask(item.id)"><i class="fa fa-trash" aria-hidden="true "></i></button>
+                        <button class="btn btn-info" (click)="updateTask(item.id)"><i class="fa fa-edit" aria-hidden="true "></i></button>
+                    </div>
+
+
+                </td>
+
+            </tr>
+            <tr [formGroup]="formValue">
+                <td colspan="1"></td>
+                <td>
+                    <input type="text " formControlName="taskname" class="form-control border-white" placeholder="+ New" aria-label="task name">
+                </td>
+                <td>
+                    <input type="text" formControlName="taskassignee" class="form-control border-white" placeholder="+ New" aria-label="task assignee">
+                </td>
+                <td>
+                    <input type="date" formControlName="taskstartdate" class="form-control border-white" placeholder="task start date " aria-label=" task start date">
+                </td>
+                <td>
+                    <input type="date" formControlName="taskenddate" class="form-control border-white" placeholder="+ New" aria-label=" task end date">
+                </td>
+                <td>
+                    <input type="text" formControlName="taskstatus" class="form-control border-white" placeholder="+ New" aria-label=" task status">
+                </td>
+
+                <td>
+                    <button data-bs-dismiss="modal" class="btn btn-secondary" (click)="postTask()">Add</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+</body>

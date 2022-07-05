@@ -1,0 +1,130 @@
+<body style=" background-image: url('/assets/bg.jpg');
+height: 100vh;">
+<div class="container-fluid mt-4">
+
+    <!-- FILTER -->
+    <div class="container-fluid pt-3 text-white">
+        <nav class="navbar navbar-expand-lg navbar-light bg-white">
+            <div class="container-fluid">
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item ms-5">
+                            <h5 class="nav-link active" aria-current="page" href="#"><b>To-Do Task List</b></h5>
+                        </li>
+                    </ul>
+                    <form class="d-flex me-5">
+                        <div class="dropdown ms-2">
+                            <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+                              <i class="fa fa-filter"> Filter</i>
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
+                                <li><a class="dropdown-item active" href="#">All Task</a></li>
+                                <li><a class="dropdown-item" href="#">Top Priority</a></li>
+                                <li><a class="dropdown-item" href="#">Next Priority</a></li>
+                            </ul>
+                        </div>
+                        <div class="dropdown ms-2">
+                            <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+                              <i class="fa fa-sort"> Sort</i>
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
+                                <li><a class="dropdown-item active" href="#">None</a></li>
+                            </ul>
+                        </div>
+                        <button class="btn btn-info ms-3" data-bs-toggle="modal" data-bs-target="#exampleModal">New +</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <h3 style="text-align: center; font-weight: bolder;font-style: italic;">Enter New Task</h3>
+                <!--Form-->
+                <form class="mt-2 row g-4 border-2 text-black" [formGroup]="formValue">
+                    <div class="col-md-12 ">
+                        <label for="todotaskname" class="form-label"><b>Task Name:</b></label>
+                        <input type="text " formControlName="todotaskname" class="form-control border-dark" placeholder="+ New" aria-label="task name">
+                    </div>
+
+                    <div class="col-md-12 ">
+                        <label for="todotaskassignee" class="form-label"><b>Task Assignee:</b></label>
+                        <input type="text" formControlName="todotaskassignee" class="form-control border-dark" placeholder="+ New" aria-label="task assignee">
+                    </div>
+
+                    <div class="col-md-12 ">
+                        <label for="todotaskstartdate" class="form-label"><b>Task Start Date:</b></label>
+                        <input type="date" formControlName="todotaskstartdate" class="form-control border-dark" placeholder="task start date " aria-label=" task start date">
+                    </div>
+
+                    <div class="col-md-12 ">
+                        <label for="todotaskpriority" class="form-label"><b>Task Priority:</b></label>
+                        <input type="text" formControlName="todotaskpriority" class="form-control border-dark" placeholder="+ New" aria-label=" task status">
+                    </div>
+
+                    <button class="btn btn-light mt-3 mb-3 w-25 border-dark border-4" style="margin-left:180px;" (click)="postTask()">Add</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--TASK TABLE -->
+<div class="container">
+    <table class="table table-hover table-responsive-xxl  ">
+        <thead class="thead-dark">
+            <tr>
+                <th>Sr.No</th>
+                <th>Task Name</th>
+                <th>Task Assignee</th>
+                <th>Task Start Date</th>
+                <th>Task Priority</th>
+                <th>Actions</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of todo; let i=index ">
+
+                <td>{{i+1}}</td>
+                <td>{{item.todotaskname}}</td>
+                <td>{{item.todotaskassignee}}</td>
+                <td>{{item.todotaskstartdate}}</td>
+                <td>{{item.todotaskpriority}}</td>
+                <td>
+                    <div class="btn-group" role="group">
+                        <button class="btn btn-danger" (click)="deleteToDoTask(item.id)"><i class="fa fa-trash" aria-hidden="true "></i></button>
+                        <button class="btn btn-info" (click)="updateToDoTask(item.id)"><i class="fa fa-edit" aria-hidden="true "></i></button>
+                    </div>
+
+
+                </td>
+
+            </tr>
+            <tr [formGroup]="formValue">
+                <td colspan="1"></td>
+                <td>
+                    <input type="text " formControlName="todotaskname" class="form-control border-white" placeholder="+ New" aria-label="task name">
+                </td>
+                <td>
+                    <input type="text" formControlName="todotaskassignee" class="form-control border-white" placeholder="+ New" aria-label="task assignee">
+                </td>
+                <td>
+                    <input type="date" formControlName="todotaskstartdate" class="form-control border-white" placeholder="task start date " aria-label=" task start date">
+                </td>
+                <td>
+                    <input type="text" formControlName="todotaskpriority" class="form-control border-white" placeholder="+ New" aria-label=" task status">
+                </td>
+                <td>
+                    <button data-bs-dismiss="modal" class="btn btn-secondary" (click)="postTask()">Add</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+</body>
